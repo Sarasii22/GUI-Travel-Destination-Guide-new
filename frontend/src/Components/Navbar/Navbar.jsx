@@ -3,7 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <div className = 'nav '>
+    <nav className = 'nav '>
       <div className="Name">Ceylon Bliss</div>
       <div className="navigation">
         <ul >
@@ -12,15 +12,14 @@ const Navbar = () => {
           <li>Popular</li>
           <li>Packages</li>
           <li>Blogs</li>
+          <li>Tours</li>
         </ul>
       </div>
       
 
-      <div>
-        <button>Login</button>
-      </div>
+      
 
-    </div>
+    </nav>
   );
 }
 
