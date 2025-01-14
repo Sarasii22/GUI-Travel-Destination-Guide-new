@@ -20,6 +20,8 @@
 }
 
 .Hero__text h1{
+  padding-top: 80px;
+  padding-bottom: 20px;
   align-items: center;
   font-size: 45px;
   font-weight: 600;
@@ -39,16 +41,17 @@
   line-height: 1.4;
   color: var(--primary-color1);
   font-size: 18px;
-  padding-top: 15px;
+  padding-top: 20px;
   text-align: justify;
   font-family: calibri;
+  padding-bottom: 50px;
 }
 
 .Hero button{
   padding: 10px;
   border: none;
   border-radius: 25px;
-  width: 100px;
+  width: 150px;
   font-size: 1.1rem;
   font-weight: 650;
   background-color: var(--primary-color2);
