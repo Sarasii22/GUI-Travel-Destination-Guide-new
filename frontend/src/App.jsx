@@ -6,7 +6,7 @@ import Hero from './Components/Hero/Hero'
 import About from './Pages/About/About';
 import Gallery from './Pages/Gallery/Gallery';
 import Contacts from './Pages/Contacts/Contacts';
-
+import Footer from './Components/Footer/Footer'
 
 function App() {
   
@@ -19,6 +19,7 @@ function App() {
       <About/>
       <Gallery/>
       <Contacts/>
+      <Footer/>
        
     </>
   );

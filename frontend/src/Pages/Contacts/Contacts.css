@@ -177,6 +177,7 @@
 .contact-col {
   display: flex;
   flex-direction: row;
+  
   justify-content: center; /* Center both columns horizontally */
   align-items: center; /* Center both columns vertically */
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
