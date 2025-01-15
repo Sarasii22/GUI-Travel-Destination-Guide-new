@@ -23,7 +23,7 @@
 
 .about-text h4 {
   font-size: 18px;
-  color: var(--text-color2); /* Subtle color for the heading */
+  color: var(--text-color3); /* Subtle color for the heading */
   margin-bottom: 20px;
   text-transform: capitalize;
 }
