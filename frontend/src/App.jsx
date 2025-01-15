@@ -5,6 +5,8 @@ import Navbar from './Components/Navbar/Navbar'
 import Hero from './Components/Hero/Hero'
 import About from './Pages/About/About';
 import Gallery from './Pages/Gallery/Gallery';
+import Contacts from './Pages/Contacts/Contacts';
+
 
 function App() {
   
@@ -16,6 +18,7 @@ function App() {
       <Hero/>
       <About/>
       <Gallery/>
+      <Contacts/>
        
     </>
   );

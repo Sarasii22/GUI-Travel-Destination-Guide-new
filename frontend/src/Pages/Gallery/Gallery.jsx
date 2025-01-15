@@ -38,7 +38,13 @@ const Gallery = () => {
         <img src={photo_4} alt="" />
         <img src={photo_15} alt="" />
         
-        
+        <img src={photo_8} alt="" />
+        <img src={photo_17} alt="" />
+        <img src={photo_19} alt="" />
+        <img src={photo_7} alt="" />
+        <img src={photo_20} alt="" />
+        <img src={photo_21} alt="" />
+
         <img src={photo_18} alt="" />
        
         
@@ -49,13 +55,7 @@ const Gallery = () => {
         
         <img src={photo_16} alt="" />
         
-        <img src={photo_8} alt="" />
-        <img src={photo_17} alt="" />
-        <img src={photo_19} alt="" />
-        <img src={photo_7} alt="" />
-        <img src={photo_20} alt="" />
-        <img src={photo_21} alt="" />
-
+        
       </div>
       
     </div>
