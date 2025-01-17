@@ -271,18 +271,105 @@
   background-color: var(--button-hover1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Devices with max-width of 1000px */
+@media (max-width: 1000px) {
+  .contact {
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px;
+  }
+
   .contact-col {
-    flex-direction: column; /* Stack columns vertically */
-    align-items: center; /* Center-align the stacked columns */
+    flex-direction: column; /* Stack the columns vertically */
+    gap: 40px; /* Reduce the gap between columns */
+    padding: 20px; /* Adjust padding */
   }
 
   .contact-col .col1,
   .contact-col .col2 {
-    max-width: 100%; /* Allow full width for smaller screens */
-    text-align: center; /* Center-align text on small screens */
+    max-width: 100%; /* Make columns take full width */
+    text-align: center; /* Center-align text */
+  }
+
+  .contact-col .col1 h3 {
+    font-size: 1.2rem; /* Reduce heading font size */
+  }
+
+  .contact-col .col1 p {
+    font-size: 0.95rem; /* Adjust font size for smaller screens */
+  }
+
+  .contact-col .col1 ul li {
+    font-size: 0.9rem; /* Adjust list item font size */
+  }
+
+  .contact-col .col1 ul li img {
+    width: 12px; /* Reduce icon size */
+    height: 12px;
+  }
+
+  .title h1 {
+    font-size: 32px; /* Reduce the title size for readability */
+  }
+
+  .title h4 {
+    font-size: 16px; /* Reduce subtitle size */
+  }
+
+  .contact-col .col2 form input,
+  .contact-col .col2 form textarea {
+    padding: 8px; /* Adjust padding for input and textarea */
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .contact-col .col2 .btn {
+    width: 120px; /* Adjust button width */
+    font-size: 1rem;
+    padding: 8px;
+    margin: 0 auto; /* Center the button */
+    display: block; /* Ensure the button behaves like a block element */
+    
   }
 }
+
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 28px; /* Smaller font size for titles */
+    margin-bottom: 15px;
+  }
+
+  .title h4 {
+    font-size: 14px; /* Adjust font size for subtitles */
+    margin-top: 30px;
+  }
+
+  .contact {
+    padding: 15px;
+  }
+
+  .contact-col {
+    gap: 20px; /* Smaller gap for limited screen space */
+  }
+
+  .contact-col .col1 ul li img {
+    width: 12px; /* Smaller icons */
+    height: 12px;
+  }
+
+  .contact-col .col2 form input,
+  .contact-col .col2 form textarea {
+    padding: 6px; /* Smaller padding */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .contact-col .col2 .btn {
+    width: 80px; /* Adjust button size */
+    font-size: 0.8rem;
+    padding: 5px;
+    margin: 0 auto; /* Center the button */
+    display: block; 
+    
+  }
+}
+
 
 
