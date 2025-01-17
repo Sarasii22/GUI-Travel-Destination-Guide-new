@@ -65,3 +65,64 @@
 .Hero button:hover{
   background-color: var(--button-hover1);
 }
+
+@media (max-width: 1000px) {
+  .Hero {
+    min-height: 80vh; /* Adjust the height for smaller screens */
+    background-size: cover;
+    padding: 20px; /* Add some padding to avoid content touching edges */
+  }
+
+  .Hero__text h1 {
+    font-size: 35px; /* Reduce font size for smaller screens */
+    padding-top: 60px; /* Adjust padding */
+    padding-bottom: 15px;
+  }
+
+  .Hero__text p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 1.5;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    text-align: justify; /* Change to center-align for better readability */
+  }
+
+  .span {
+    font-size: 50px; /* Reduce the size of highlighted text */
+  }
+
+  .Hero button {
+    width: 120px; /* Reduce button width */
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Hero {
+    min-height: 60vh; /* Further reduce height for very small screens */
+    padding: 10px;
+  }
+
+  .Hero__text h1 {
+    font-size: 22px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+
+  .Hero__text p {
+    font-size: 12px; /* Smaller font for smaller devices */
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .span {
+    font-size: 30px; /* Adjust highlighted text size */
+  }
+
+  .Hero button {
+    width: 80px; /* Adjust button size */
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+}
