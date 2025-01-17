@@ -54,7 +54,10 @@
   gap: 15px;
 }
 
-
+.menu-icon{
+  display: none;
+  
+}
 
 .mobile_menu{
   font-size: 1.3rem;
@@ -62,5 +65,50 @@
 }
 
 @media (max-width: 1000px) {
+  
 
+  .navigation  {
+    padding: 15px 0;  
+  }
+
+  
+
+  .navigation ul {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    background-color: var(--background-color1);
+    width: 200px;
+    padding-top: 70px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .navigation ul li {
+    display: block;
+    margin: 15px 30px;
+    color: var(--text-color1);
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .menu-icon{
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10000;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background-color: aliceblue;
+  }
+
+  .hide-menu{
+    right: -200px;
+  }
+
+  
 }
