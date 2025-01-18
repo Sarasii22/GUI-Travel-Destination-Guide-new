@@ -62,28 +62,30 @@
 .mobile_menu{
   font-size: 1.3rem;
   color: var(--primary-color1);
+  
 }
 
 @media (max-width: 1000px) {
-  
-
-  .navigation  {
-    padding: 15px 0;  
+  .navigation {
+    padding: 15px 0;
   }
-
-  
 
   .navigation ul {
     position: fixed;
-    top: 0px;
-    right: 0;
+    top: 0;
+    right: -200px; /* Initially hidden off-screen */
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh; /* Full screen height for mobile */
     background-color: var(--background-color1);
     width: 200px;
     padding-top: 70px;
-    transition: 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, right 0.5s ease-in-out; /* Smooth slide-in effect */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+  }
+
+  .navigation ul.nav-links-mobile {
+    right: 0; /* Slide menu into view when active */
   }
 
   .navigation ul li {
@@ -94,21 +96,37 @@
     font-size: 20px;
   }
 
-  .menu-icon{
+  .menu-icon {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 30px; /* Slightly larger for better tap targets */
+    height: 30px;
     cursor: pointer;
     z-index: 10000;
     position: absolute;
-    top: 25px;
-    right: 30px;
-    background-color: aliceblue;
+    top: 20px;
+    right: 20px;
+    background-color: transparent; /* Remove default background */
+    color: white; /* Change the color of the icon to white */
   }
 
-  .hide-menu{
-    right: -200px;
+  .hide-menu {
+    right: -200px; /* Slide menu back out of view */
   }
 
-  
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    z-index: 999;
+    display: none;
+    transition: opacity 0.5s ease;
+  }
+
+  .menu-overlay.active {
+    display: block;/* Show overlay when menu is active */
+  }
 }
+

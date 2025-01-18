@@ -10,14 +10,14 @@ const Popular = () => {
       <div className='container'>
         <div className='popular-title'>
           <h2>Popular Destinations</h2>
-          <p>from historical cities to 
+          <p>From historical cities to 
             natural specteculars, come and
             explore the best of Sri Lanka with us
           </p>
         </div>
         <div className='arrow-icons'>
-          <img src={icon2} alt='' />
-          <img src={icon1} alt='' />
+          <img src={icon2} alt='' className='licon'/>
+          <img src={icon1} alt='' className='ricon'/>
         </div>
       </div>         
      
