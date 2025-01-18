@@ -190,7 +190,7 @@
 /* Left Column (class 1) */
 .contact-col .col1 {
   flex: 1; /* Allow this column to grow */
-  max-width: 45%; /* Limit maximum width */
+  max-width: 100%; /* Limit maximum width */
   box-sizing: border-box;
   text-align: left; /* Center-align text inside the column */
 }
@@ -233,11 +233,13 @@
    
   max-width: 100%; /* Limit maximum width */
   text-align: left; /* Center-align text inside the column */
-  box-sizing: border-box;
+  
+  box-sizing: content-box;
 }
 
 .contact-col .col2 form input,
 .contact-col .col2 form textarea {
+
   display: block;
   flex: 1;
   width: 100%;
