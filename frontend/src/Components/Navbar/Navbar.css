@@ -66,8 +66,18 @@
 }
 
 @media (max-width: 1000px) {
+.nav{
+  background-color: rgb(141, 136, 111);
+} 
+
+.nav:hover{
+  transition: transform 0.5s ease-in-out, right 0.5s ease-in-out;
+  height: 60px;
+}
+
   .navigation {
     padding: 15px 0;
+    
   }
 
   .navigation ul {
@@ -96,6 +106,7 @@
     font-size: 20px;
   }
 
+  
   .menu-icon {
     display: block;
     width: 30px; /* Slightly larger for better tap targets */
