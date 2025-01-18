@@ -1,41 +1,29 @@
-
-import './App.css'
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import Navbar from './Components/Navbar/Navbar'
-//import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Hero from './Components/Hero/Hero'
-import About from './Pages/About/About';
-import Gallery from './Pages/Gallery/Gallery';
-import Contacts from './Pages/Contacts/Contacts';
-import Footer from './Components/Footer/Footer';
-import Popular from './Pages/Popular/Popular';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Register from './Pages/Register/Register';
+import login from './Pages/login/login';
 
 function App() {
-  
-
   return (
-    <>
-       <BrowserRouter>
-        
-        <Navbar/>
-        <Hero/>
-        <About/>
-        <Popular/>
-        <Gallery/>
-        <Contacts/>
-        <Footer/>
-       </BrowserRouter>
-      
-       
-    </>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
 export default App;
-/*
-import './App.css';
+
+
+
+
+/*import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
@@ -61,6 +49,5 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/
 
-*/
