@@ -6,7 +6,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate('/register');
+    navigate('/login');
   }
 
   return (

@@ -1,0 +1,106 @@
+/* Search bar container */
+.search-bar {
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form styling */
+.search-bar-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Fields are spaced evenly */
+  align-items: center;
+  gap: 30px; /* Space between fields */
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Individual field container */
+.field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px; /* Space between icon and label/input */
+  flex: 1; /* Ensures fields grow/shrink evenly */
+  max-width: 300px; /* Adjust field width as needed */
+}
+
+/* Icon styling */
+.field img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Label and input container */
+.field div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Label styling */
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* Input styling */
+.field input {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+/* Input focus effect */
+.field input:focus {
+  border-color: #007bff;
+}
+
+.sbtn {
+  padding: 10px ;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 5px;
+  background-color:#f9f9f9;
+  border: none;
+  
+  border-radius: 5px;
+  cursor: pointer;
+  
+  transition: background-color 0.3s ease;
+}
+
+.sbtn:hover {
+  background-color: #007bff;
+  
+  border-radius: 10px 5px 10px 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-bar-form {
+    flex-direction: row; /* Stack fields vertically on small screens */
+    gap: 15px;
+  }
+
+  .field {
+    max-width: 100%; /* Allow full-width fields on smaller screens */
+  }
+}
