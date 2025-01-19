@@ -2,6 +2,8 @@ import React from 'react'
 import './Popular.css'
 import icon1 from '../../assets/icons/r-arrow.png';
 import icon2 from '../../assets/icons/l-arrow.png';
+import ToursList from '../../Components/ToursList/ToursList';
+
 
 const Popular = () => {
   return (
@@ -14,6 +16,7 @@ const Popular = () => {
             natural specteculars, come and
             explore the best of Sri Lanka with us
           </p>
+          <ToursList/>
         </div>
         <div className='arrow-icons'>
           <img src={icon2} alt='' className='licon'/>
