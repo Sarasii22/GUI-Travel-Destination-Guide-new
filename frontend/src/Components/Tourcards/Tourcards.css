@@ -1,0 +1,65 @@
+/* Card.css */
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  max-width: 400px;
+  margin: 16px auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.card-description {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.card-price {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.card-city {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: #666;
+}
+
+.card-map-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.card-map-link:hover {
+  text-decoration: underline;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
