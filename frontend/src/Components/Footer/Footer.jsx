@@ -1,12 +1,14 @@
 import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
-import {Container, Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
+import { ListGroup, ListGroupItem} from 'react-bootstrap'
 import fbicon from '../../assets/icons/fb.png'
 import igicon from '../../assets/icons/inster.png'
 import yticon from '../../assets/icons/yt.png'
 import giticon from '../../assets/icons/github.png'
-
+import eicon from '../../assets/icons/email-icon.png'
+import picon from '../../assets/icons/phone-icon.png'
+import licon from '../../assets/icons/location-icon.png'
 
 const quick_links = [
   {
@@ -15,27 +17,27 @@ const quick_links = [
   },
   {
     name: 'About',
-    link: '/about'
+    link: 'about'
   },
   
   {
     name: 'Popular',
-    link: '/popular'
+    link: 'popular'
   },
   {
     name: 'Packages',
-    link: '/packages'
+    link: 'packages'
   },
   {
     name: 'Contact',
-    link: '/contact'
+    link: 'contact'
   },
 ]
-/*
+
 const quick_links2 = [
   {
     name: 'Gallery',
-    link: '/gallery'
+    link: 'gallery'
   },
   {
     name: 'Login',
@@ -45,31 +47,19 @@ const quick_links2 = [
     name: 'Register',
     link: '/register'
   },
-] */
+] 
 
 
 const Footer = () => {
+
+  const year = new Date().getFullYear()
+
   return (
     <div>
-      <div className='ftitle'>
-        <h2>Ceylon Bliss</h2>
-        <div className='social_links'>
-          <span>
-            <Link to='/'><img src={fbicon} alt='facebook' /></Link>
-          </span>
-          <span>
-            <Link to='/'><img src={igicon} alt='instagram' /></Link>
-          </span>
-          <span>
-            <Link to='/'><img src={yticon} alt='youtube' /></Link>
-          </span>
-          <span>
-            <Link to='/'><img src={giticon} alt='github' /></Link>
-          </span>
-
-        </div>  
-      </div>
+    <div className='footer-container'>
+      
       <div className='fquick_links_title'>
+        Discover
         <ListGroup className='fquick_links'>
           {
             quick_links.map((item, index) => (
@@ -80,6 +70,80 @@ const Footer = () => {
           }
         </ListGroup>
       </div>
+      <div className='fquick_links_title'>
+        quick links
+        <ListGroup className='fquick_links'>
+          {
+            quick_links2.map((item, index) => (
+              <ListGroupItem key={index} className='link2'>
+                <Link to={item.link}>{item.name}</Link>
+              </ListGroupItem>
+            ))
+          }
+        </ListGroup>
+      </div>
+      <div className='fquick_links_title'>
+        Contact Us
+        <ListGroup className='fquick_links'>
+          <ListGroupItem className='flocation'>
+            <h6>
+              <span>
+                <img src={licon} alt='' />
+              </span>
+              Address:     
+              </h6>
+              <p>
+                No. 12, Ceylon Bliss (PVT) LTD, Baththaramulla, Colombo
+              </p>
+          </ListGroupItem>
+          <ListGroupItem className='femail'>
+            <h6>
+              <span>
+                <img src={eicon} alt='' />
+              </span>
+              Email:     
+              </h6>
+              <p>
+              ceylonbliss@gmail.com
+              </p>
+          </ListGroupItem>
+          <ListGroupItem className='fphone'>
+            <h6>
+              <span>
+                <img src={picon} alt='' />
+              </span>
+                Phone:     
+              </h6>
+              <p>
+                +94 11 245 5486
+              </p>
+          </ListGroupItem>
+        </ListGroup>
+      </div>
+    </div>
+    <div className='ftitle'>
+      <h2>Ceylon Bliss</h2>
+      <div className='social_links'>
+        <span>
+          <Link to='/'><img src={fbicon} alt='facebook' /></Link>
+        </span>
+        <span>
+          <Link to='/'><img src={igicon} alt='instagram' /></Link>
+        </span>
+        <span>
+          <Link to='/'><img src={yticon} alt='youtube' /></Link>
+        </span>
+        <span>
+          <Link to='/'><img src={giticon} alt='github' /></Link>
+        </span>
+      </div>  
+      <div className='copyright'>
+        <p>
+          Copyright {year}, design and develop by Ceylon Bliss.
+          All rights reserved.
+        </p>
+      </div>
+    </div>
     </div>
   )
 }
