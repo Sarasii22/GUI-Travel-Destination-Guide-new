@@ -6,6 +6,8 @@ import Popular from '../Popular/Popular';
 import Gallery from '../Gallery/Gallery';
 import Contacts from '../Contacts/Contacts';
 import Footer from '../../Components/Footer/Footer';
+import Testimonial from '../Testimonial/Testimonial';
+
 
 const Home = () => {
   return (
@@ -22,6 +24,9 @@ const Home = () => {
       </div>
       <div id="gallery">
         <Gallery />
+      </div>  
+      <div id="testimonial">
+        <Testimonial />
       </div>
       <div id="contacts">
         <Contacts />
