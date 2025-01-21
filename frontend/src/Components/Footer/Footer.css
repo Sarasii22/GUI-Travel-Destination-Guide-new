@@ -1,18 +1,89 @@
-.social_links{
+/* Footer Container */
+.footer-container {
   display: flex;
-  justify-content: left;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 40px;
+  background-color: #94a8ca;
+  color: #0f0e0e;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
 }
 
+/* Individual Sections */
+.fquick_links_title {
+  flex: 1; /* Equal width for each section */
+  margin: 0 10px;
+  text-align: left;
+}
 
-.fquick_links .link1
-{
-  font-size: 1.2rem;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--primary-color2);
+.fquick_links_title h6 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Quick Links List */
+.fquick_links {
+  list-style: none;
+  padding: 0;
+}
+
+.fquick_links li {
+  margin: 8px 0;
+}
+
+.fquick_links a {
   text-decoration: none;
-  transition: all 0.3s ease;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.fquick_links a:hover {
+  color: #ffcc00;
+}
+
+/* Footer Title */
+.ftitle {
+  text-align: center;
+  padding: 20px;
+  background-color: #092c6c;
+}
+
+.ftitle h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.social_links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social_links img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social_links img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fquick_links_title {
+    margin: 20px 0;
+  }
 }

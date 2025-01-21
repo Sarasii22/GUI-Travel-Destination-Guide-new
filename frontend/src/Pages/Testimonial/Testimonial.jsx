@@ -78,7 +78,7 @@ const Testimonial = () => {
     const settings = {
       dots: true, // Enable dots
       infinite: true, // Infinite looping
-      autoplay: false,
+      autoplay: true,
       speed: 1000, 
       swipeToSlide: true, // Allow swiping directly to a slide
       slidesToShow: 3, // Show 3 slides at a time
