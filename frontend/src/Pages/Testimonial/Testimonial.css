@@ -1,0 +1,127 @@
+.testimonial {
+  padding: 50px 5px;
+  max-width: 1200px;
+  margin: 0 auto;
+ gap: 18px; /* Space between image and text */
+  
+}
+
+.testimonial-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.testimonial-title h4 {
+  font-size: 18px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.testimonial-title h2 {
+  font-size: 36px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: #c7e0f5;
+  border-radius: 12px;
+  border-color: #333;
+  padding: 30px;
+  gap: 20px;
+  text-align: left;
+  width: 25%;
+  margin: 0 50px;
+  height: 100%; /* Ensures all cards are the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures the content is evenly spaced */
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonial-card-bottom {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimonial-card-bottom img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.testimonial-card-bottom-text h4 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.testimonial-card-bottom-text p {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+}
+
+.slick-list {
+  padding: 0 15px; /* Add padding to the edges of the slider */
+}
+
+
+/* Slick Dots */
+.slick-dots {
+  bottom: -30px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #333;
+}
+
+/* Slick Arrows */
+.slick-prev,
+.slick-next {
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: #555;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  color: #fff;
+}
