@@ -83,7 +83,7 @@ const Testimonial = () => {
       swipeToSlide: true, // Allow swiping directly to a slide
       slidesToShow: 3, // Show 3 slides at a time
       slidesToScroll: 1, // Scroll one slide at a time
-     //autoplaySpeed: 3000, // Autoplay interval
+      autoplaySpeed: 3000, // Autoplay interval
       centerMode: true, // Center the active slide
       centerPadding: "30px", // Padding around the center slide
       responsive: [
