@@ -83,18 +83,22 @@ export default ToursList;*/
 import React from 'react'
 import Tourcards from '../Tourcards/Tourcards';
 import tourData from '../../assets/data/Tours';
-import { Col } from 'react-bootstrap';
+//import { Col } from 'react-bootstrap';
+import './ToursList.css';
 const ToursList = () => {
   return (
-    <>
+    <div>
       <h1 className='text-center'>Tours</h1>  
-      {tourData?.map(tour => (
-        <Col lg="3" className='mb-4' key={tour.id}>
-          <Tourcards tour={tour} />
-        </Col>
-      ))} 
-      
-    </>
+
+      <div className="tours-container">
+        {tourData?.map(tour => (
+          <div  className="tour-card" key={tour.id}>
+            <Tourcards tour={tour} />
+          </div>
+        ))} 
+        
+      </div>
+    </div>
   )
 }
 

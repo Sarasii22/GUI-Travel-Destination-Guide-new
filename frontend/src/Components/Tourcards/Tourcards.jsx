@@ -43,6 +43,9 @@ const Tourcards = ({tour}) => {
         <span>Featured</span>
       </Card>  
       <CardBody>
+        <h5 className="tour-title">
+          <Link to={`/tour/${id}`}>{title}</Link>
+        </h5>
         <div className='card-top d-flex justify-content-between align-items-center'>
           <span className="tour_location d-flex align-items-center gap-2">
             <img src={locationicon} alt="" />{city}
@@ -52,9 +55,7 @@ const Tourcards = ({tour}) => {
             <span>({reviews.length})</span>
           </span> 
         </div>
-        <h5 className="tour-title">
-          <Link to={`/tour/${id}`}>{title}</Link>
-        </h5>
+        
         <div className="card-bottom d-flex justify-content-between align-items-center mt-3"> 
           <h5 className="tour-price">Rs. {price}
             <span> / per person</span>
