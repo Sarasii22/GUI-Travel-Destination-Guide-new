@@ -1,0 +1,32 @@
+/* ToursList.css */
+
+/* Container for the list of cards */
+.tours-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; 
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Spread cards evenly across the row */
+  margin: 20px auto;
+}
+
+/* Responsive adjustments for cards */
+.tour-card {
+  flex: 1 1 calc(25% - 20px); /* 3 cards per row */
+  max-width: calc(25% - 20px); /* Ensure cards don't exceed 3 in a row */
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .tour-card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .tour-card {
+    flex: 1 1 100%; /* 1 card per row on small screens */
+  }
+}
