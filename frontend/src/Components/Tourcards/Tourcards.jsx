@@ -1,5 +1,5 @@
 // Card.jsx
-import React from 'react';
+/*import React from 'react';
 import './Tourcards.css';
 
 const TourCard = ({ title, city, price, description, mapLink }) => {
@@ -22,4 +22,17 @@ const TourCard = ({ title, city, price, description, mapLink }) => {
   );
 };
 
-export default TourCard;
+export default TourCard;*/
+
+
+import React from 'react'
+
+const Tourcards = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default Tourcards
