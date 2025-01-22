@@ -26,11 +26,44 @@ export default TourCard;*/
 
 
 import React from 'react'
+import {Card, CardBody} from 'reactstrap';
+import { Link } from 'react-router-dom';
+import locationicon from '../../assets/icons/location-icon.png'
+import rating from '../../assets/icons/rating.png'
+import './Tourcards.css'
 
-const Tourcards = () => {
+const Tourcards = ({tour}) => {
+
+  const {id, title, city, price, desc, img, avgRating, reviews} = tour;
+
   return (
-    <div>
-      
+    <div className='tourcard'>
+      <Card className='card'>
+        <img src={img} alt="tour-img" />
+        <span>Featured</span>
+      </Card>  
+      <CardBody>
+        <div className='card-top d-flex justify-content-between align-items-center'>
+          <span className="tour_location d-flex align-items-center gap-2">
+            <img src={locationicon} alt="" />{city}
+          </span> 
+          <span className="tour_rating d-flex align-items-center gap-2">
+            <img src={rating} alt="" />{avgRating}
+            <span>({reviews.length})</span>
+          </span> 
+        </div>
+        <h5 className="tour-title">
+          <Link to={`/tour/${id}`}>{title}</Link>
+        </h5>
+        <div className="card-bottom d-flex justify-content-between align-items-center mt-3"> 
+          <h5 className="tour-price">Rs. {price}
+            <span> / per person</span>
+          </h5>
+          <button className="booking-button">
+            <Link to={`/tour/${id}`}>Book Now</Link>
+          </button>
+        </div>
+      </CardBody>     
     </div>
   )
 }
