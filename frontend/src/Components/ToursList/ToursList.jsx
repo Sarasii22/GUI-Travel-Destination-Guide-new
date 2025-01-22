@@ -15,6 +15,7 @@ export default ToursList*/
 
 
 // JSX Code
+/*
 import React from 'react';
 import './ToursList.css';
 
@@ -53,10 +54,10 @@ const ToursList = () => {
     <div className="cards-container">
       {places.map((place, index) => (
         <div key={index} className="card">
-          {/* Place Image */}
+          {}
           <img src={place.image} alt={place.name} className="place-image" />
 
-          {/* Place Details */}
+          {}
           <div className="card-details">
             <h3>{place.name}</h3>
             <p>{place.city}</p>
@@ -77,4 +78,26 @@ const ToursList = () => {
   );
 };
 
-export default ToursList;
+export default ToursList;*/
+
+import React from 'react'
+import Tourcards from '../Tourcards/Tourcards';
+import tourData from '../../assets/data/Tours';
+import { Col } from 'react-bootstrap';
+const ToursList = () => {
+  return (
+    <>
+      <h1 className='text-center'>Tours</h1>  
+      {tourData?.map(tour => (
+        <Col lg="3" className='mb-4' key={tour.id}>
+          <Tourcards tour={tour} />
+        </Col>
+      ))} 
+      
+    </>
+  )
+}
+
+export default ToursList
+
+
