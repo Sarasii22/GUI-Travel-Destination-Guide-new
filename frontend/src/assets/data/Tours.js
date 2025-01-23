@@ -14,7 +14,7 @@ import timg12 from "../../assets/places/hambantota/muruthawela/muruthawela1.jpg"
 const Tours = [
     {
         id: 1,
-        title: "Mihinthalaya",
+        title: "Mihinthalaya Rajamaha Viharaya",
         city: "Anuradhapura",
         distance: 18,
         maxGroupSize: 10,
@@ -171,11 +171,11 @@ const Tours = [
         reviews: [
           {
               name: "John Doe",
-              rating: 4.7,
+              rating: 4.5,
           },
       ],        
 
-        avgRating: 4.7,
+        avgRating: 4,
         featured: true,
     },
     {

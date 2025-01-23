@@ -7,7 +7,7 @@ import Gallery from '../Gallery/Gallery';
 import Contacts from '../Contacts/Contacts';
 import Footer from '../../Components/Footer/Footer';
 import Testimonial from '../Testimonial/Testimonial';
-
+import Subscribe from '../../Components/Subscribe/Subscribe';
 
 const Home = () => {
   return (
@@ -31,7 +31,9 @@ const Home = () => {
       <div id="contacts">
         <Contacts />
       </div>
+      <Subscribe />
       <Footer />
+
     </div>
   )
 }

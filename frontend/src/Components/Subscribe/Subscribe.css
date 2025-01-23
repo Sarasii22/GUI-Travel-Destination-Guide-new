@@ -1,0 +1,91 @@
+/* Subscribe Section */
+.subscribe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+/* Subscribe Image */
+.subscribe-img {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.subscribe-img img {
+  max-width: 50%;
+  max-height: 50%;
+  height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Subscribe Form */
+.subscribe-form {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subscribe-form h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Input and Button */
+.subscribe-input {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.subscribe-input input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.subscribe-input input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.subscribe-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Subscribe Content */
+.subscribe-content {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-top: 10px;
+}
