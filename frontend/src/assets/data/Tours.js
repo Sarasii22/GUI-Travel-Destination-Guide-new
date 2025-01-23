@@ -171,11 +171,11 @@ const Tours = [
         reviews: [
           {
               name: "John Doe",
-              rating: 4.7,
+              rating: 4.5,
           },
       ],        
 
-        avgRating: 4.7,
+        avgRating: 4,
         featured: true,
     },
     {
