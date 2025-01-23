@@ -304,3 +304,31 @@
   color: #333;
   font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+
+  .cards-container {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .tourcard {
+    flex: 1 1 calc(50% - 20px); /* Two cards per row */
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+
+  .cards-container {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .tourcard {
+    flex: 1 1 100%; /* One card per row */
+  }
+
+  
+}

@@ -44,8 +44,25 @@ const Tourcards = ({tour}) => {
       </Card>  
       <CardBody>
         <h5 className="tour-title">
-          <Link to={`/tour/${id}`}>{title}</Link>
+          <a 
+            href={`https://www.google.com/maps/place/${encodeURIComponent(title)}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            {title}
+          </a>
         </h5>
+        {/*<h5 className="tour-title">
+          <a 
+            href={`https://www.google.com/maps/search/${encodeURIComponent(title)}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            {title}
+          </a>
+        </h5>*/}
+
+
         <div className='card-top d-flex justify-content-between align-items-center'>
           <span className="tour_location d-flex align-items-center gap-2">
             <img src={locationicon} alt="" />{city}
