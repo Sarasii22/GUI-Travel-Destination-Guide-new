@@ -47,7 +47,7 @@ const Tourcards = ({tour}) => {
       <CardBody>
         <h5 className="tour-title">
           <a 
-            href={`https://www.google.com/maps/place/${encodeURIComponent(title)}`} 
+            href={`/tour/${id}`} 
             target="_blank" 
             rel="noopener noreferrer"
           >

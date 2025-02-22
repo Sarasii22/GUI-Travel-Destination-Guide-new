@@ -38,8 +38,7 @@ const Popular = () => {
         See all tours
       </button>       
      
-    </div>
-  )
+    </div>  )
 }
 
 export default Popular
