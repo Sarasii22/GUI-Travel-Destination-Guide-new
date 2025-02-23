@@ -8,6 +8,8 @@ import About from './Pages/About/About';
 import Gallery from './Pages/Gallery/Gallery';
 import Contacts from './Pages/Contacts/Contacts';
 import Tours from './Pages/Tours/Tours';
+import TourDetails from './Pages/TourDetails/TourDetails';
+//import TourDetails from './Pages/TourDetails/TourDetails';
 //import AllTours from './Pages/AllTours/AllTours';
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          
+          <Route path="/tour/:id" element={<TourDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contacts" element={<Contacts />} />
