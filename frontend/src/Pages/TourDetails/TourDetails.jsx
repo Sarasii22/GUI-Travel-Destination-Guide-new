@@ -52,11 +52,11 @@ const TourDetails = () => {
         <Row>
           <Col lg="8">
             <div className="tour-content">
+              
               <img src={img} alt={title} className="img-fluid" />
               <div className="tour-info">
-                <h2>{title}</h2>
+                <h2>{title} - {city}</h2>
                 <p>{desc}</p>
-                <p>City: {city}</p>
                 <p>Price: Rs. {price}</p>
                 <p>Reviews: {reviews.length}</p>
               </div>

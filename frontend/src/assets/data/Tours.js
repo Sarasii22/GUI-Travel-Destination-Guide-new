@@ -10,6 +10,11 @@ import timg9 from "../../assets/places/polonnaruwa/galwiharaya/galwiharaya1.jpg"
 import timg10 from "../../assets/places/badulla/koslanda/koslanda1.jpg";
 import timg11 from "../../assets/places/galle/kanneliya/kanneliya1.jpg";
 import timg12 from "../../assets/places/hambantota/muruthawela/muruthawela1.jpg";
+import timg13 from "../../assets/places/anuradhapura/kalawewa/kalawewa6.jpg"
+import timg14 from "../../assets/places/anuradhapura/awkana/awkana1.jpg"
+import timg15 from "../../assets/places/badulla/dabana/dabana.jpg"
+import timg16 from "../../assets/places/badulla/diyaluma/diyaluma.jpeg"
+import timg17 from "../../assets/places/badulla/ella/ella.jpeg"
 
 const Tours = [
     {
@@ -229,6 +234,97 @@ const Tours = [
       ],
         avgRating: 4.7,
         featured: true,
+    },
+
+    {
+        id:13,
+        title: "Kalawewa",
+        city: "Anuradhapura",
+        distance: 119,
+        img: timg13,
+        desc: "",
+        price: 1000,
+        reviews: [
+            {
+                name: "John Doe",
+                rating: 4.7,
+            },
+        ],
+          avgRating: 4.7,
+          featured: false,
+
+    },
+
+    {
+        id:14,
+        title: "Awkana",
+        city: "Anuradhapura",
+        distance: 119,
+        img: timg14,
+        desc: "",
+        price: 1000,
+        reviews: [
+            {
+                name: "John Doe",
+                rating: 4.7,
+            },
+        ],
+          avgRating: 4.7,
+          featured: false,
+    },
+
+    {
+        id:15,
+        title: "Dabana",
+        city: "Badulla",
+        distance: 119,
+        img: timg15,
+        desc: "",
+        price: 1000,
+        reviews: [
+            {
+                name: "John Doe",
+                rating: 4.7,
+            },
+        ],
+          avgRating: 4.7,
+          featured: false,
+    },
+
+    {
+        id:16,
+        title: "Diyaluma",
+        city: "Badulla",
+        distance: 119,
+        img: timg16,
+        desc: "",
+        price: 1000,
+        reviews: [
+            {
+                name: "John Doe",
+                rating: 4.7,
+            },
+        ],
+          avgRating: 4.7,
+          featured: false,
+    },
+
+    {
+        id:17,
+        title: "Ella",
+        city: "Badulla",
+        distance: 119,
+        img: timg17,
+        desc: "",
+        price: 1000,
+        reviews: [
+            {
+                name: "John Doe",
+                rating: 4.7,
+            },
+        ],
+          avgRating: 4.7,
+          featured: false,
     }
 ];
 
