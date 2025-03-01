@@ -152,7 +152,7 @@ const Tourcards = ({ tour }) => {
   const { id, title, city, price, desc, img, reviews } = tour;
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
-  return (
+return (
     <div className="tourcard">
       <Card className="card">
         <img src={img} alt="tour-img" />
