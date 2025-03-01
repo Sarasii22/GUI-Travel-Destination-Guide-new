@@ -38,7 +38,7 @@ import Tours from "../../assets/data/Tours";
 
 const TourDetails = () => {
   const { id } = useParams();
-  const tour = Tours.find((tour) => tour.id === id);
+  const tour = Tours.find((tour) => tour.id === parseInt(id));
 
   if (!tour) {
     return <div>Tour not found!</div>;
