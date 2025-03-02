@@ -4,6 +4,7 @@ import './Popular.css';
 //import icon2 from '../../assets/icons/l-arrow.png';
 import ToursList from '../../Components/ToursList/ToursList';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Popular = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const Popular = () => {
         </div>*/}
       </div>  
       <button onClick={handleLoginClick} className='tours-button'>
-        See all tours
+        <Link to="/tours">See all tours </Link>  
       </button>       
     </div>  
   );

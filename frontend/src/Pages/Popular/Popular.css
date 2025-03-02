@@ -21,39 +21,21 @@
   
 }
 
-.arrow-icons{
-  padding: 0.5rem;
-  
-}
 
-
-
-.licon:hover{
-  background: var(--text-color3);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-
-.ricon:hover{
-  background: var(--text-color3);
-  border-radius: 50%;
-  cursor: pointer;
-}
 
 /* Styles for the "See all tours" button */
 
 
 /* Hover effect */
 .tours-button:hover {
-  background-color: var(--secondary-color); /* Change color on hover */
+  background-color: var(--button-hover1); /* Change color on hover */
   transform: scale(1.05);
 }
 
 /* Click effect */
 .tours-button:active {
   transform: scale(0.98);
-  background-color: var(--hover-color); /* A slightly darker shade */
+  background-color: var(--button-hover1); /* A slightly darker shade */
 }
 
 /* Centering the button inside its parent */
@@ -61,22 +43,30 @@
   text-align: center;
 }
 
-/* Hide the button on smaller screens */
+/* Hide the button on smaller screens *//*
 @media (max-width: 768px) {
   .tours-button {
     display: none;
   }
-}
+}*/
 /* Add more styles as needed */
 .tours-button {
   display: inline-block;
-  margin: 0 auto;
+  padding: 10px 20px;
+ 
+  
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-bottom: 50px;
+  justify-content: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   text-align: center;
   align-items: center;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  background-color: rgb(209, 181, 24) !important; /* Temporary to test visibility */
+  cursor: pointer;
+  background-color: var(--primary-color2); /* Temporary to test visibility */
 }
+

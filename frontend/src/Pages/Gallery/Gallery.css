@@ -5,8 +5,8 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/pages/gallerybg.webp') no-repeat center center/cover;
-  
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/gallery/gallerybg.jpg') no-repeat center center/cover;
+  padding-bottom: 50px;
 }
 
 .photos .topic{
@@ -21,10 +21,11 @@
 
 .photos .topic h1 {
   font-size: 2.2rem;
-  font-weight: 500;
-  color: var(--text-color1); /* Darker color for the main title */
+  font-weight: 600;
+  color: var(--primary-color1); /* Darker color for the main title */
   margin: 5px 0;
   padding-bottom: 30px;
+  padding-top: 10px;
   text-transform: capitalize;
 }
 

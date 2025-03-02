@@ -9,7 +9,7 @@ import Gallery from './Pages/Gallery/Gallery';
 import Contacts from './Pages/Contacts/Contacts';
 import Tours from './Pages/Tours/Tours';
 import TourDetails from './Pages/TourDetails/TourDetails';
-import Booking from './Pages/Booking/Booking';
+//import Booking from './Pages/Booking/Booking';
 //mport Login from './Pages/Login/Login';
 //import TourDetails from './Pages/TourDetails/TourDetails';
 //import AllTours from './Pages/AllTours/AllTours';
@@ -29,7 +29,8 @@ function App() {
           <Route path="/login/loginhome" element={<LoginHome />} />
           <Route path="/login/register" element={<Register/>}/>
           <Route path="/register/login" element={<Login/>}/>
-          <Route path="/tour/booking" element={<Booking />} />
+          <Route path="/tours" element={<Tours />} />
+          
         </Routes>
       </BrowserRouter>
     </div>
