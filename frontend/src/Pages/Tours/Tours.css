@@ -1,0 +1,11 @@
+
+
+.tour-title h1 {
+  font-size: 3rem;
+  color: var(--text-color1);
+  font-weight: 200;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 30px;
+}

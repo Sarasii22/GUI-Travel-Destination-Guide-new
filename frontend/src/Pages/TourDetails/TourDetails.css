@@ -1,0 +1,95 @@
+.tour-content{
+    margin-top: 80px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.tour-content h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--text-color2);
+}
+
+.tour-content p{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    
+}
+
+.price{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color1);
+}
+
+.tour-content img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.tour-details{
+    margin-top: 20px;
+    display: flex;
+    gap: 10%;
+    flex-direction: row;
+ 
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.tour-info{
+  padding: 15px;
+  
+
+}
+
+.t{
+    color:var(--text-color1);
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    
+   
+}
+
+.decs{
+  align-items: justify;
+  text-align: justify;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-color2);
+  padding: 20px;
+}
+
+
+.book-btn{
+  padding: 10px;
+  border: none;
+  height: 40px;
+  width: 150px;
+  font-size: 1.1rem;
+  font-weight: 650;
+  background-color: var(--primary-color2);
+  cursor: pointer;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover{
+  background-color: var(--button-hover1);
+}

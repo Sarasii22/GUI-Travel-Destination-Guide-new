@@ -139,7 +139,6 @@ const Tourcards = ({ tours }) => {
 };
 
 export default Tourcards; */
-
 import React from "react";
 import { Card, CardBody } from "reactstrap";
 import { Link } from "react-router-dom";
@@ -149,14 +148,14 @@ import "./Tourcards.css";
 import calculateAvgRating from "../../utils/avgRating";
 
 const Tourcards = ({ tour }) => {
-  const { id, title, city, price, desc, img, reviews } = tour;
+  const { id, title, city, price, desc, img, reviews, featured } = tour;
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
-return (
+  return (
     <div className="tourcard">
       <Card className="card">
         <img src={img} alt="tour-img" />
-        <span>Featured</span>
+        {featured && <span className="featured-label">Featured</span>}
       </Card>
       <CardBody>
         <h5 className="tour-title">

@@ -79,29 +79,31 @@ const ToursList = () => {
 };
 
 export default ToursList;*/
-
-import React from 'react'
+import React from 'react';
 import Tourcards from '../Tourcards/Tourcards';
 import tourData from '../../assets/data/Tours';
-//import { Col } from 'react-bootstrap';
 import './ToursList.css';
-const ToursList = () => {
+
+const ToursList = ({ onlyFeatured = false }) => {
+  // Filter tours based on the onlyFeatured flag
+  const filteredTours = onlyFeatured
+    ? tourData.filter(tour => tour.featured === true)
+    : tourData;
+
   return (
     <div>
-      <h1 className='text-center'>Tours</h1>  
-
+      
       <div className="tours-container">
-        {tourData?.map(tour => (
-          <div  className="tour-card" key={tour.id}>
+        {filteredTours?.map(tour => (
+          <div className="tour-card" key={tour.id}>
             <Tourcards tour={tour} />
           </div>
         ))} 
-        
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ToursList
+export default ToursList;
 
 
