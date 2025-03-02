@@ -41,3 +41,42 @@
   cursor: pointer;
 }
 
+/* Styles for the "See all tours" button */
+
+
+/* Hover effect */
+.tours-button:hover {
+  background-color: var(--secondary-color); /* Change color on hover */
+  transform: scale(1.05);
+}
+
+/* Click effect */
+.tours-button:active {
+  transform: scale(0.98);
+  background-color: var(--hover-color); /* A slightly darker shade */
+}
+
+/* Centering the button inside its parent */
+.popular {
+  text-align: center;
+}
+
+/* Hide the button on smaller screens */
+@media (max-width: 768px) {
+  .tours-button {
+    display: none;
+  }
+}
+/* Add more styles as needed */
+.tours-button {
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  align-items: center;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background-color: rgb(209, 181, 24) !important; /* Temporary to test visibility */
+}
