@@ -64,6 +64,12 @@
    
 }
 
+h3{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color2);
+}
 .decs{
   align-items: justify;
   text-align: justify;

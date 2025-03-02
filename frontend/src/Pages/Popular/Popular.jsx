@@ -29,10 +29,12 @@ const Popular = () => {
           <img src={icon2} alt='' className='licon' />
           <img src={icon1} alt='' className='ricon' />
         </div>*/}
-      </div>  
-      <button onClick={handleLoginClick} className='tours-button'>
-        <Link to="/tours">See all tours </Link>  
-      </button>       
+      </div >  
+      <div className="button-container">
+      <button  onClick={handleLoginClick} className='tours-button'>
+        <Link to="/tours">See All Tours </Link>  
+      </button> 
+      </div>      
     </div>  
   );
 };

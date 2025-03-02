@@ -139,7 +139,7 @@ const Navbar = () => {
                   Contact
                 </ScrollLink>
               ) : (
-                <RouterLink to="/contacts" onClick={closeMenu}>
+                <RouterLink to="/contact" onClick={closeMenu}>
                   Contact
                 </RouterLink>
             )}
