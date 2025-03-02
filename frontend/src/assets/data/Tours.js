@@ -7,7 +7,7 @@ import timg6 from "../../assets/places/hambantota/yala/yala1.jpg";
 import timg7 from "../../assets/places/matara/hiriketiya/hiriketiya1.jpg";
 import timg8 from "../../assets/places/nuwaraeliya/hortan plains/hortan plains1.jpg";
 import timg9 from "../../assets/places/polonnaruwa/galwiharaya/galwiharaya1.jpg";
-import timg10 from "../../assets/places/badulla/koslanda/koslanda1.jpg";
+import timg10 from "../../assets/places/badulla/koslanda/koslanda.webp";
 import timg11 from "../../assets/places/galle/kanneliya/kanneliya1.jpg";
 import timg12 from "../../assets/places/hambantota/muruthawela/muruthawela1.jpg";
 import timg13 from "../../assets/places/anuradhapura/kalawewa/kalawewa6.jpg"
@@ -163,8 +163,26 @@ const Tours = [
         avgRating: 4.7,
         featured: true,
     },
+    
     {
         id:9,
+        title: "Koslanda",
+        city: "Badulla",
+        distance: 119,
+        img: timg10,
+        desc: "Koslanda is a small village located in the Badulla District of Sri Lanka. It is a great place for hiking and wildlife watching. The region is home to a variety of wildlife such as leopards, elephants and crocodiles, as well as hundreds of bird species.",
+        price: 3500,
+        reviews: [
+          {
+              name: "John Doe",
+              rating: 4.7,
+          },
+      ],
+        avgRating: 4.7,
+        featured: true,
+    },
+    {
+        id:10,
         title: "Galwihaaraya",
         city: "Polonnaruwa",
         distance: 119,
@@ -181,23 +199,6 @@ const Tours = [
       ],        
 
         avgRating: 4,
-        featured: true,
-    },
-    {
-        id:10,
-        title: "Koslanda",
-        city: "Badulla",
-        distance: 119,
-        img: timg10,
-        desc: "Koslanda is a small village located in the Badulla District of Sri Lanka. It is a great place for hiking and wildlife watching. The region is home to a variety of wildlife such as leopards, elephants and crocodiles, as well as hundreds of bird species.",
-        price: 3500,
-        reviews: [
-          {
-              name: "John Doe",
-              rating: 4.7,
-          },
-      ],
-        avgRating: 4.7,
         featured: true,
     }
     ,
