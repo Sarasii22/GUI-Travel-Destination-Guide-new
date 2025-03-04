@@ -149,11 +149,35 @@ import calculateAvgRating from "../../utils/avgRating";
 
 const Tourcards = ({ tour }) => {
   const { id, title, city, price, desc, img, reviews, featured } = tour;
-  const { totalRating, avgRating } = calculateAvgRating(reviews);
+  // const { totalRating, avgRating } = calculateAvgRating(reviews);
+
+  // Function to handle booking
+  const handleBookNow = () => {
+    // Get existing bookings from localStorage
+    const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    // Check if the tour is already booked
+    const isAlreadyBooked = existingBookings.some((booking) => booking.id === id);
+
+    if (isAlreadyBooked) {
+      alert("This tour is already booked!");
+      return;
+    }
+
+    // Add the new tour to bookings
+    const newBooking = { id, title, city, price, desc, img, reviews, featured };
+    const updatedBookings = [...existingBookings, newBooking];
+
+    // Save updated bookings to localStorage
+    localStorage.setItem("bookings", JSON.stringify(updatedBookings));
+
+    alert("Tour booked successfully!");
+  };
 
   return (
     <div className="tourcard">
       <Card className="card">
+        {/* Change the img */}
         <img src={img} alt="tour-img" />
         {featured && <span className="featured-label">Featured</span>}
       </Card>
@@ -169,8 +193,8 @@ const Tourcards = ({ tour }) => {
           </span>
           <span className="tour_rating d-flex align-items-center gap-2">
             <img src={rating} alt="" />
-            {avgRating === 0 ? null : avgRating}
-            {totalRating === 0 ? "Not Rated" : <span>({reviews.length})</span>}
+            {/* {avgRating === 0 ? null : avgRating}
+            {totalRating === 0 ? "Not Rated" : <span>({reviews.length})</span>} */}
           </span>
         </div>
 
@@ -179,7 +203,7 @@ const Tourcards = ({ tour }) => {
             Rs. {price}
             <span> / per person</span>
           </h5>
-          <button className="booking-button">
+          <button className="booking-button" onClick={handleBookNow}>
             <Link to={`/tour/${id}`}>Book Now</Link>
           </button>
         </div>

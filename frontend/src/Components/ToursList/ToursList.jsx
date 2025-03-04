@@ -79,31 +79,73 @@ const ToursList = () => {
 };
 
 export default ToursList;*/
-import React from 'react';
+
+
+import React, { useEffect, useState } from 'react';
 import Tourcards from '../Tourcards/Tourcards';
-import tourData from '../../assets/data/Tours';
 import './ToursList.css';
 
 const ToursList = ({ onlyFeatured = false }) => {
-  // Filter tours based on the onlyFeatured flag
-  const filteredTours = onlyFeatured
-    ? tourData.filter(tour => tour.featured === true)
-    : tourData;
+  const [tours, setTours] = useState([]); // State to store fetched tours
+  const [loading, setLoading] = useState(true); // State to handle loading state
+  const [error, setError] = useState(null); // State to handle errors
+
+  // Fetch data from the backend
+  useEffect(() => {
+    const fetchTours = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/tours?onlyFeatured=${onlyFeatured}`
+        );
+        if (!response.ok) {
+          throw new Error('Failed to fetch tours');
+        }
+        const data = await response.json();
+        setTours(data); // Set fetched data to state
+        console.log('Fetched tours:', data); // Log fetched data to console
+      } catch (error) {
+        console.error('Error fetching tours:', error);
+        setError(error.message); // Set error message
+      } finally {
+        setLoading(false); // Set loading to false after fetch completes
+      }
+    };
+
+    fetchTours();
+  }, [onlyFeatured]); // Re-fetch when onlyFeatured changes
+
+  // Display loading state
+  if (loading) {
+    return <div className="loading">Loading tours...</div>;
+  }
+
+  // Display error state
+  if (error) {
+    return <div className="error">Error: {error}</div>;
+  }
+
+  // Skip filtering and assign all tours to filteredTours
+  const filteredTours = tours;
+
+  console.log('Filtered tours:', filteredTours);
+  console.log('Tours:', tours);
+
+  // If no tours are found
+  if (filteredTours.length === 0) {
+    return <div className="no-tours">No tours found.</div>;
+  }
 
   return (
     <div>
-      
       <div className="tours-container">
-        {filteredTours?.map(tour => (
+        {filteredTours.map(tour => (
           <div className="tour-card" key={tour.id}>
             <Tourcards tour={tour} />
           </div>
-        ))} 
+        ))}
       </div>
     </div>
   );
 };
 
 export default ToursList;
-
-

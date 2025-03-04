@@ -1,30 +1,35 @@
-import express from 'express';
-import mysql from 'mysql';
-
+// server.js
+const express = require('express');
+const cors = require('cors');
+const db = require('./database');
 
 const app = express();
+const PORT = 5000;
 
-const dbConfig = {
-  host: 'bmgy9hk93sjzw8nh790h-mysql.services.clever-cloud.com',
-  user: 'u4ado3u84ci7qvc1',
-  password: 'u4ado3u84ci7qvc1',
-  database: 'bmgy9hk93sjzw8nh790h',
-};
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-const db = mysql.createConnection(dbConfig);
+// API to get all tours
+app.get('/api/tours', (req, res) => {
+  const { onlyFeatured } = req.query;
+  console.log(req.query);
 
-db.connect((err) => {
-  if (err) {
-    console.error('Error connecting to database:', err.stack);
-    return;
+  let query = 'SELECT * FROM tours';
+  if (onlyFeatured === 'true') {
+    query += ' WHERE featured = 1';
   }
-  console.log('Connected to database as id', db.threadId);
+
+  db.all(query, (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(rows);
+  });
 });
 
-app.get('/about', (req, res) => {
-  res.send('Hello World!');
-});
-
-app.listen(5387, () => {
-  console.log('Server is running on port 5387'); // eslint-disable-next-line no-console
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
