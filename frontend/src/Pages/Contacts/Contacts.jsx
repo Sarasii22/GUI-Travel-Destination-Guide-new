@@ -3,7 +3,7 @@ import './Contacts.css'
 import icon1 from '../../assets/icons/email-icon.png'
 import icon2 from '../../assets/icons/phone-icon.png'
 import icon3 from '../../assets/icons/location-icon.png'
-
+import Navbar from '../../Components/Navbar/Navbar'
 
 const Contacts = () => {
 
@@ -34,6 +34,7 @@ const Contacts = () => {
 
   return (
     <div className='çontact'>
+      <Navbar />
       <div className='title'>
         <h4>Contacts</h4>
         <h1>Get in touch</h1>

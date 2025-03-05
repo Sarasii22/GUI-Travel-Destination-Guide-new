@@ -20,10 +20,11 @@ import photo_18 from '../../assets/gallery/t18.jpg'
 import photo_19 from '../../assets/gallery/t19.jpg'
 import photo_20 from '../../assets/gallery/t20.jpg'
 import photo_21 from '../../assets/gallery/t21.jpg'
-
+import Navbar from '../../Components/Navbar/Navbar'
 const Gallery = () => {
   return (
     <div className='photos'>
+      <Navbar />
       <div className='topic'>
         
         <h1>visit our customers tour gallery </h1>

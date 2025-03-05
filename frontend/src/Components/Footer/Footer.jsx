@@ -57,9 +57,13 @@ const Footer = () => {
   return (
     <div>
     <div className='footer-container'>
+      <div className='fquick_links_title'>
+        <h4>About Us</h4>
+        <p>Explore the wonders of Sri Lanka with Ceylon Bliss. Book your dream tour, browse our gallery, and read customer testimonials to see why travelers love us. Let us guide you through an unforgettable journey across this beautiful island. Discover breathtaking landscapes and rich culture with our expertly crafted travel experiences.</p>
+      </div>
       
       <div className='fquick_links_title'>
-        Discover
+        <h4>Discover</h4>
         <ListGroup className='fquick_links'>
           {
             quick_links.map((item, index) => (
@@ -69,9 +73,10 @@ const Footer = () => {
             ))
           }
         </ListGroup>
+        
       </div>
       <div className='fquick_links_title'>
-        quick links
+      <h4>Quick Links</h4>
         <ListGroup className='fquick_links'>
           {
             quick_links2.map((item, index) => (
@@ -82,8 +87,9 @@ const Footer = () => {
           }
         </ListGroup>
       </div>
+      
       <div className='fquick_links_title'>
-        Contact Us
+        <h4>Contact Us</h4>
         <ListGroup className='fquick_links'>
           <ListGroupItem className='flocation'>
             <h6>

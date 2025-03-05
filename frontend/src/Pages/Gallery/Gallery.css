@@ -6,7 +6,8 @@
   align-items: center;
   padding: 10px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/gallery/gallerybg.jpg') no-repeat center center/cover;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
+  
 }
 
 .photos .topic{
@@ -14,7 +15,7 @@
   margin-bottom: 20px;
   justify-content: left;
   align-items: left;
-  margin-top: 20px;
+  margin-top: 50px;
   
 }
 

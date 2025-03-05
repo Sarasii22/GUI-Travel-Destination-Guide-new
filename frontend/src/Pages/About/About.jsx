@@ -1,9 +1,16 @@
 import React from 'react'
 import './About.css'
 import aboutimg from '../../assets/pages/about.webp'
+import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../../Components/Footer/Footer'
 const About = () => {
   return (
+    <div>
+    <div>
+      <Navbar/>
+    </div>
     <div className = "about" > 
+      <Navbar/>
       <div className="about-image">
         <img src ={aboutimg} alt = " "/>
       </div>
@@ -30,7 +37,9 @@ const About = () => {
           </div>
         </div>
       </div>
-
+      
+    </div>
+    
     </div>
   )
 }

@@ -5,7 +5,7 @@ import './Popular.css';
 import ToursList from '../../Components/ToursList/ToursList';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
+import Navbar from '../../Components/Navbar/Navbar';
 const Popular = () => {
   const navigate = useNavigate();
 
@@ -15,6 +15,7 @@ const Popular = () => {
 
   return (
     <div className='popular'>
+      <Navbar />
       <div className='container'>
         <div className='popular-title'>
           <h2>Popular Destinations</h2>
