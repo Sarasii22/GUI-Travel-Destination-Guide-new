@@ -1,0 +1,125 @@
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.booking-page {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  padding-top: 80px;
+  font-family: Arial, sans-serif;
+  flex: 1;
+}
+
+.booking-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.booking-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.tour-details {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.tour-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.tour-info {
+  text-align: left;
+}
+
+.tour-info h2 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.tour-info p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.tour-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.booking-form {
+  width: 35%;
+  height: 450px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.people-input,
+.date-input {
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.booking-form p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.book-now-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 150px;
+  align-self: center;
+}
+
+.book-now-button:hover {
+  background-color: #0056b3;
+}
+
+.booking-status {
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.booking-status.success {
+  color: green;
+}
+
+.booking-status.error {
+  color: red;
+}
