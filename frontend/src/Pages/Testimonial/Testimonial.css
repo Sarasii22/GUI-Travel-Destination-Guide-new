@@ -1,58 +1,68 @@
+/* Testimonial.css */
+
 .testimonial {
-  padding: 50px 5px;
-  max-width: 1200px;
+  padding: 60px 20px;
+  max-width: 1400px; /* Slightly wider for better layout */
   margin: 0 auto;
- gap: 18px; /* Space between image and text */
-  
+  background-color: #f9fafb; /* Light background for contrast */
 }
 
 .testimonial-title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .testimonial-title h4 {
-  font-size: 18px;
-  color: #777;
+  font-size: 1.25rem; /* 20px */
+  color: #6b7280; /* Gray for subtlety */
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
 .testimonial-title h2 {
-  font-size: 36px;
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 2.5rem; /* 40px */
+  color: #1f2937; /* Darker gray for emphasis */
+  font-weight: 700;
+  margin-bottom: 0;
 }
 
 /* Testimonial Card */
 .testimonial-card {
-  background: #c7e0f5;
-  border-radius: 12px;
-  border-color: #333;
-  padding: 30px;
-  gap: 20px;
+  background: #a9bada; /* White for clean look */
+  border-radius: 16px;
+  padding: 25px;
   text-align: left;
-  width: 25%;
-  margin: 0 50px;
-  height: 100%; /* Ensures all cards are the same height */
+  height: 100%; /* Consistent height */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures the content is evenly spaced */
-  transition: transform 0.3s ease;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
+/* Ensure gap between cards */
+.slick-slide > div {
+  margin: 0 15px; /* Adds gap between cards */
+}
+
+.slick-list {
+  margin: 0 -15px; /* Offset the margin to prevent overflow */
+}
+
+/* Hover effect */
 .testimonial-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-card p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  font-size: 1rem; /* 16px */
+  color: #4b5563; /* Medium gray */
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Allows text to fill space */
 }
 
 .testimonial-card-bottom {
@@ -66,62 +76,94 @@
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ddd;
+  border: 3px solid #e5e7eb; /* Light gray border */
 }
 
 .testimonial-card-bottom-text h4 {
-  font-size: 18px;
-  color: #333;
+  font-size: 1.125rem; /* 18px */
+  color: #1f2937;
   margin: 0;
   font-weight: 600;
 }
 
 .testimonial-card-bottom-text p {
-  font-size: 14px;
-  color: #777;
+  font-size: 0.875rem; /* 14px */
+  color: #6b7280;
   margin: 0;
 }
 
+/* Slick Slider Adjustments */
 .slick-list {
-  padding: 0 15px; /* Add padding to the edges of the slider */
+  padding: 0 10px; /* Slight padding on edges */
 }
 
-
-/* Slick Dots */
 .slick-dots {
-  bottom: -30px;
+  bottom: -40px; /* More space below */
 }
 
 .slick-dots li button:before {
   font-size: 12px;
-  color: #ccc;
+  color: #d1d5db; /* Light gray */
+  opacity: 0.8;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #333;
+  color: #ff7f50; /* Match your brand color */
+  opacity: 1;
 }
 
 /* Slick Arrows */
 .slick-prev,
 .slick-next {
-  background-color: #333;
-  color: #fff;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(31, 41, 55, 0.8); /* Darker with transparency */
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
 .slick-prev:hover,
 .slick-next:hover {
-  background-color: #555;
+  background-color: #ff7f50; /* Brand color on hover */
 }
 
 .slick-prev:before,
 .slick-next:before {
   font-size: 20px;
   color: #fff;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-title h2 {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial {
+    padding: 40px 15px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+
+  .testimonial-card p {
+    font-size: 0.9375rem; /* 15px */
+  }
+
+  .testimonial-card-bottom img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .testimonial-title h2 {
+    font-size: 1.75rem; /* 28px */
+  }
 }

@@ -4,15 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import locationicon from "../../assets/icons/location-icon.png";
 import rating from "../../assets/icons/rating.png";
 import "./Tourcards.css";
-import calculateAvgRating from "../../utils/avgRating";
+// import calculateAvgRating from "../../utils/avgRating"; // Uncomment if needed
 
 const Tourcards = ({ tour }) => {
   const { id, title, city, price, desc, img, reviews, featured } = tour;
   const navigate = useNavigate();
 
-  // Function to navigate to booking page with tour data
   const handleBookNow = () => {
-    // Navigate to booking page, passing tour data via state
     navigate("/booking", { state: { tour } });
   };
 
@@ -20,7 +18,7 @@ const Tourcards = ({ tour }) => {
     <div className="tourcard">
       <Card className="card">
         <img src={img} alt="tour-img" />
-        {featured && <span className="featured-label">Featured</span>}
+        {featured === 1 && <span className="featured-label">Featured</span>}
       </Card>
       <CardBody>
         <h5 className="tour-title">
