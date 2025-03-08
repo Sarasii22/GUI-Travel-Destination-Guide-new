@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { db, deleteTour, insertTour, updateTour, insertUser, getUserByEmail } = require("./database");
+const { db, deleteTour, insertTour, updateTour, insertUser, getUserByEmail, insertBooking, getUserBookings } = require("./database");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -11,7 +11,20 @@ const JWT_SECRET = "your-secret-key-change-this"; // Change this in production!
 app.use(cors());
 app.use(express.json());
 
-// Tours Routes (unchanged)
+// Middleware to verify JWT
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1]; // Bearer <token>
+  if (!token) return res.status(401).json({ error: "Access denied, no token provided" });
+
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) return res.status(403).json({ error: "Invalid token" });
+    req.user = user; // Attach user info to request
+    next();
+  });
+};
+
+// Tours Routes
 app.get("/api/tours", (req, res) => {
   const { onlyFeatured } = req.query;
   let query = "SELECT * FROM tours";
@@ -91,7 +104,7 @@ app.put("/api/tours/:id", (req, res) => {
   });
 });
 
-// User Routes (new)
+// User Routes
 app.post("/api/signup", async (req, res) => {
   const { email, password, firstName, lastName, country } = req.body;
 
@@ -106,12 +119,12 @@ app.post("/api/signup", async (req, res) => {
 
       const hashedPassword = await bcrypt.hash(password, 10);
       insertUser({ email, password: hashedPassword, firstName, lastName, country }, (err, id) => {
-        if (err) return res.status(500).json({ error: "Failed to save user" });
+        if (err) return res.status(500).json({ error: "Failed to save user: " + err.message });
         res.status(201).json({ message: "User registered successfully" });
       });
     });
   } catch (error) {
-    res.status(500).json({ error: "Server error" });
+    res.status(500).json({ error: "Server error: " + error.message });
   }
 });
 
@@ -123,7 +136,7 @@ app.post("/api/login", (req, res) => {
   }
 
   getUserByEmail(email, async (err, user) => {
-    if (err) return res.status(500).json({ error: "Database error" });
+    if (err) return res.status(500).json({ error: "Database error: " + err.message });
     if (!user) return res.status(401).json({ error: "Invalid email or password" });
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -135,6 +148,36 @@ app.post("/api/login", (req, res) => {
       token,
       user: { email, firstName: user.firstName, lastName: user.lastName },
     });
+  });
+});
+
+// Booking Routes
+app.post("/api/bookings", authenticateToken, (req, res) => {
+  const { tour_id, start_date, end_date, price } = req.body;
+  const user_id = req.user.id; // From JWT
+
+  if (!tour_id || !start_date || !end_date || !price) {
+    return res.status(400).json({ error: "Missing required fields: tour_id, start_date, end_date, or price" });
+  }
+
+  const booking = { user_id, tour_id, start_date, end_date, price };
+  insertBooking(booking, (err, newId) => {
+    if (err) {
+      res.status(500).json({ error: "Failed to create booking: " + err.message });
+      return;
+    }
+    res.status(201).json({ message: "Booking created successfully", id: newId });
+  });
+});
+
+app.get("/api/bookings", authenticateToken, (req, res) => {
+  const user_id = req.user.id; // From JWT
+  getUserBookings(user_id, (err, bookings) => {
+    if (err) {
+      res.status(500).json({ error: "Failed to retrieve bookings: " + err.message });
+      return;
+    }
+    res.json(bookings);
   });
 });
 

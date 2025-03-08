@@ -72,8 +72,13 @@ const Booking = () => {
     setBookingStatus("Booking successful!");
     setTimeout(() => {
       setBookingStatus(""); // Clear message after 3 seconds
-      navigate("/"); // Navigate back to home after success
+      navigate("/loginhome"); // Navigate back to home after success
     }, 3000);
+  };
+
+  // Handle navigation to view bookings
+  const handleViewBookings = () => {
+    navigate("/my-bookings"); // Navigate to a new route for viewing bookings
   };
 
   if (!tour) {
@@ -124,6 +129,9 @@ const Booking = () => {
             <p>Total Price: Rs. {totalPrice.toFixed(2)}</p>
             <button onClick={handleBookingSubmit} className="book-now-button">
               Book Now
+            </button>
+            <button onClick={handleViewBookings} className="view-bookings-button">
+              View My Bookings
             </button>
             {bookingStatus && (
               <p className={`booking-status ${bookingStatus.includes("successful") ? "success" : "error"}`}>
