@@ -1,0 +1,116 @@
+.HeroLogin{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/pages/Home.jpg') no-repeat center center/cover;
+  opacity: 80%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.HeroLogin__text{
+  
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;  
+  
+}
+
+.HeroLogin__text h1{
+  padding-top: 80px;
+  padding-bottom: 20px;
+  align-items: center;
+  font-size: 45px;
+  font-weight: 600;
+  color: var(--primary-color1);
+  justify-content: center;
+  text-align: center;
+}
+
+.span{
+  color: var(--primary-color2);
+  font-size: 60px;
+}
+
+.HeroLogin__text p{
+  max-width: 750px;
+  margin: 10px auto 20px;
+  line-height: 1.4;
+  color: var(--primary-color1);
+  font-size: 18px;
+  padding-top: 20px;
+  text-align: justify;
+  font-family: calibri;
+  padding-bottom: 50px;
+}
+
+.Logout-button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: none;	
+}
+
+@media (max-width: 1000px) {
+  .Hero {
+    min-height: 80vh; /* Adjust the height for smaller screens */
+    background-size: cover;
+    padding: 20px; /* Add some padding to avoid content touching edges */
+  }
+
+  .Hero__text h1 {
+    font-size: 35px; /* Reduce font size for smaller screens */
+    padding-top: 60px; /* Adjust padding */
+    padding-bottom: 15px;
+  }
+
+  .Hero__text p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 1.5;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    text-align: justify; /* Change to center-align for better readability */
+  }
+
+  .span {
+    font-size: 50px; /* Reduce the size of highlighted text */
+  }
+
+  .Hero button {
+    width: 120px; /* Reduce button width */
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Hero {
+    min-height: 60vh; /* Further reduce height for very small screens */
+    padding: 10px;
+  }
+
+  .Hero__text h1 {
+    font-size: 22px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+
+  .Hero__text p {
+    font-size: 12px; /* Smaller font for smaller devices */
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .span {
+    font-size: 30px; /* Adjust highlighted text size */
+  }
+
+  .Hero button {
+    width: 80px; /* Adjust button size */
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+}

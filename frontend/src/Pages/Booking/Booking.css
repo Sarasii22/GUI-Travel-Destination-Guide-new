@@ -1,3 +1,4 @@
+
 .booking-container {
   display: flex;
   flex-direction: column;
@@ -61,8 +62,8 @@
 
 .booking-form {
   width: 35%;
-  height: 450px;
-  margin-top: 100px;
+  
+  
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -87,11 +88,28 @@
   border-radius: 4px;
   width: 100%;
   max-width: 200px;
+  margin-bottom: 5px;
+}
+.price-details {
+  
+  
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #ccd1e7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.price-details h4 {
+  margin: 0;
+  font-size: 20px;
 }
 
 .booking-form p {
   font-size: 18px;
-  margin: 10px 0;
+
 }
 
 .book-now-button {
