@@ -11,6 +11,7 @@ import Tours from './Pages/Tours/Tours';
 import TourDetails from './Pages/TourDetails/TourDetails';
 import Booking from './Pages/Booking/Booking';
 import Popular from './Pages/Popular/Popular';
+import MyBookings from './Pages/MyBookings/MyBookings'
 //mport Login from './Pages/Login/Login';
 //import TourDetails from './Pages/TourDetails/TourDetails';
 //import AllTours from './Pages/AllTours/AllTours';
@@ -34,6 +35,8 @@ function App() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/tours/:id" element={<TourDetails />} />
           <Route path="/popular" element={<Popular />} />
+          <Route path="/my-bookings" element={<MyBookings />} />
+          <Route path="/loginhome" element={<LoginHome/>}/>
         </Routes>
       </BrowserRouter>
     </div>

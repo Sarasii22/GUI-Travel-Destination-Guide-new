@@ -5,12 +5,17 @@ const db = new sqlite3.Database("./tours.db", (err) => {
     console.error("Error connecting to the database:", err.message);
   } else {
     console.log("Connected to the SQLite database.");
-    createTables(); // Updated to create both tables
+    // Enable foreign key enforcement
+    db.run("PRAGMA foreign_keys = ON;", (err) => {
+      if (err) console.error("Error enabling foreign keys:", err.message);
+      else console.log("Foreign keys enabled");
+    });
+    createTables();
   }
 });
 
 const createTables = () => {
-  // Tours table (unchanged)
+  // Tours table
   db.run(`
     CREATE TABLE IF NOT EXISTS tours (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,7 +35,7 @@ const createTables = () => {
     }
   });
 
-  // Users table (new)
+  // Users table
   db.run(`
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -48,9 +53,30 @@ const createTables = () => {
       console.log("Users table created or already exists.");
     }
   });
+
+  // Bookings table
+  db.run(`
+    CREATE TABLE IF NOT EXISTS bookings (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      tour_id INTEGER NOT NULL,
+      start_date TEXT NOT NULL,
+      end_date TEXT NOT NULL,
+      price REAL NOT NULL,
+      booking_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id),
+      FOREIGN KEY (tour_id) REFERENCES tours(id)
+    )
+  `, (err) => {
+    if (err) {
+      console.error("Error creating bookings table:", err.message);
+    } else {
+      console.log("Bookings table created or already exists.");
+    }
+  });
 };
 
-// Tours Functions (unchanged)
+// Tours Functions
 const deleteTour = (id, callback) => {
   const sql = `DELETE FROM tours WHERE id = ?`;
   db.run(sql, [id], function (err) {
@@ -99,7 +125,7 @@ const updateTour = (id, tour, callback) => {
   });
 };
 
-// User Functions (new)
+// User Functions
 const insertUser = (user, callback) => {
   const { email, password, firstName, lastName, country } = user;
   const sql = `
@@ -129,6 +155,41 @@ const getUserByEmail = (email, callback) => {
   });
 };
 
+// Booking Functions
+const insertBooking = (booking, callback) => {
+  const { user_id, tour_id, start_date, end_date, price } = booking;
+  const sql = `
+    INSERT INTO bookings (user_id, tour_id, start_date, end_date, price)
+    VALUES (?, ?, ?, ?, ?)
+  `;
+  db.run(sql, [user_id, tour_id, start_date, end_date, price], function (err) {
+    if (err) {
+      console.error("Error inserting booking:", err.message);
+      callback(err); // Pass error to callback
+    } else {
+      console.log(`Booking inserted with id: ${this.lastID}`);
+      callback(null, this.lastID); // Success case
+    }
+  });
+};
+
+const getUserBookings = (user_id, callback) => {
+  const sql = `
+    SELECT b.id, b.tour_id, t.title, t.city, b.start_date, b.end_date, b.price, b.booking_date
+    FROM bookings b
+    JOIN tours t ON b.tour_id = t.id
+    WHERE b.user_id = ?
+  `;
+  db.all(sql, [user_id], (err, rows) => {
+    if (err) {
+      console.error("Error retrieving bookings:", err.message);
+      callback(err);
+    } else {
+      callback(null, rows);
+    }
+  });
+};
+
 module.exports = {
   db,
   deleteTour,
@@ -136,4 +197,6 @@ module.exports = {
   updateTour,
   insertUser,
   getUserByEmail,
+  insertBooking,
+  getUserBookings,
 };

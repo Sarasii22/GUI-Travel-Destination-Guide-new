@@ -9,3 +9,13 @@
   margin-top: 120px;
   margin-bottom: 30px;
 }
+
+.view-bookings-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  margin-top: 10px; /* Add some spacing between buttons */
+}

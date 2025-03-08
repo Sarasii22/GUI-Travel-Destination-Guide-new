@@ -110,6 +110,16 @@
   background-color: #0056b3;
 }
 
+.view-bookings-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* Add some spacing between buttons */
+}
+
+.view-bookings-button:hover {
+  text-decoration: underline;
+}
 .booking-status {
   margin-top: 15px;
   font-size: 18px;
