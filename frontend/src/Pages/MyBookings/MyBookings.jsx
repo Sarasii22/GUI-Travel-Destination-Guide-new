@@ -14,7 +14,9 @@ const MyBookings = () => {
       const token = localStorage.getItem("token");
       if (!token) {
         setError("Please log in to view your bookings!");
-        navigate("/login");
+        setTimeout(() => {
+          navigate("/login");
+        }, 10000); // 30 seconds delay before navigating to login
         return;
       }
 
@@ -28,7 +30,14 @@ const MyBookings = () => {
 
         if (!response.ok) {
           const errorData = await response.json();
-          throw new Error(errorData.error || "Failed to fetch bookings");
+          if (errorData.error === "Invalid token" || errorData.error === "Unauthorized") {
+            setError("Please log in again—your session may have expired!");
+            localStorage.removeItem("token"); // Clear invalid token
+            setTimeout(() => navigate("/login"), 10000); // 30 seconds delay
+          } else {
+            throw new Error(errorData.error || "Failed to fetch bookings");
+          }
+          return;
         }
 
         const data = await response.json();

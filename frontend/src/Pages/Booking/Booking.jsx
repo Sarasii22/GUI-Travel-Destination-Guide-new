@@ -11,46 +11,40 @@ const Booking = () => {
   const [numberOfPeople, setNumberOfPeople] = useState(1);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [basePrice, setBasePrice] = useState(0); // New state for base price
-  const [taxAmount, setTaxAmount] = useState(0); // Tax state
-  const [totalPrice, setTotalPrice] = useState(0); // Total price state
+  const [basePrice, setBasePrice] = useState(0);
+  const [taxAmount, setTaxAmount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [bookingStatus, setBookingStatus] = useState("");
 
-  // Load tour from navigation state and set initial prices
   useEffect(() => {
     if (location.state && location.state.tour) {
       const selectedTour = location.state.tour;
       setTour(selectedTour);
-      // Initial prices for 1 person, 1 day
-      const initialBasePrice = selectedTour.price * 1 * 1; // 1 person, 1 day
+      const initialBasePrice = selectedTour.price * 1 * 1;
       setBasePrice(initialBasePrice);
-      setTaxAmount(0); // No tax for 1 day
+      setTaxAmount(0);
       setTotalPrice(initialBasePrice);
     }
   }, [location.state]);
 
-  // Recalculate prices when numberOfPeople, startDate, or endDate changes
   useEffect(() => {
     if (tour) {
-      // Default to 1 day if no dates are selected
       let days = 1;
       if (startDate && endDate) {
         const start = new Date(startDate);
         const end = new Date(endDate);
-        days = Math.max(1, Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + 1); // Include both days
+        days = Math.max(1, Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + 1);
       }
 
-      // Base price: tour.price per person per day
       const basePricePerDay = tour.price;
       const newBasePrice = basePricePerDay * numberOfPeople * days;
       setBasePrice(newBasePrice);
 
-      // Tax calculation
       let tax = 0;
-      if (days > 1) { // Tax applies to extra days
+      if (days > 1) {
         const extraDays = days - 1;
         if (extraDays <= 5) {
-          tax = basePricePerDay * numberOfPeople * extraDays * 0.7; // 70% tax
+          tax = basePricePerDay * numberOfPeople * extraDays * 0.7;
         } else {
           const firstFiveExtraDaysTax = basePricePerDay * numberOfPeople * 5 * 0.7;
           const remainingExtraDays = extraDays - 5;
@@ -85,7 +79,9 @@ const Booking = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       setBookingStatus("Please log in to book a tour!");
-      navigate("/login");
+      setTimeout(() => {
+        navigate("/login");
+      }, 20000); // Changed to 30 seconds (30000 milliseconds)
       return;
     }
 
@@ -93,7 +89,7 @@ const Booking = () => {
       tour_id: tour.id,
       start_date: startDate,
       end_date: endDate,
-      price: totalPrice, // Total price including tax
+      price: totalPrice,
     };
 
     try {
@@ -108,15 +104,22 @@ const Booking = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to book tour");
+        if (errorData.error === "Invalid token" || errorData.error === "Unauthorized") {
+          setBookingStatus("Please log in again—your session may have expired!");
+          localStorage.removeItem("token");
+          setTimeout(() => navigate("/login"), 20000); // Also 30 seconds for consistency
+        } else {
+          throw new Error(errorData.error || "Failed to book tour");
+        }
+        return;
       }
 
       const data = await response.json();
-      setBookingStatus(`Booking successful! `);
+      setBookingStatus("Booking successful!");
       setTimeout(() => {
         setBookingStatus("");
         navigate("/loginhome");
-      }, 3000);
+      }, 8000);
     } catch (error) {
       setBookingStatus(`Error: ${error.message}`);
     }
@@ -182,11 +185,11 @@ const Booking = () => {
             </label>
             <div className="price-details">
               <h4>Price Details</h4>
-            <p>Rs. {tour.price} / per person per day</p>
-            <p>Base Price: Rs. {basePrice.toFixed(2)}</p>
-            <p>Tax: Rs. {taxAmount.toFixed(2)}</p>
-            <p>Total Price: Rs. {totalPrice.toFixed(2)}</p></div>
-            
+              <p>Rs. {tour.price} / per person per day</p>
+              <p>Base Price: Rs. {basePrice.toFixed(2)}</p>
+              <p>Tax: Rs. {taxAmount.toFixed(2)}</p>
+              <p>Total Price: Rs. {totalPrice.toFixed(2)}</p>
+            </div>
             <button onClick={handleBookingSubmit} className="book-now-button">
               Book Now
             </button>
