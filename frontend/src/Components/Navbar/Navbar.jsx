@@ -18,6 +18,9 @@ const Navbar = () => {
   };
 
   const isHomePage = location.pathname === "/"; // Check if on public Home page
+  const isLoginPage = location.pathname === "/login"; // Check if on Login page
+  const isRegisterPage = location.pathname === "/register"; // Check if on Register page
+  const isLoginHomePage = location.pathname === "/loginhome"; // Check if on private Home page
 
   return (
     <nav className="nav">
@@ -45,8 +48,9 @@ const Navbar = () => {
               </RouterLink>
             )}
           </li>
+         
           <li>
-            {isHomePage ? (
+            {(isHomePage || isLoginHomePage) ? (
               <ScrollLink
                 to="about"
                 smooth={true}
@@ -63,7 +67,7 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            {isHomePage ? (
+            {(isHomePage || isLoginHomePage) ? (
               <ScrollLink
                 to="popular"
                 smooth={true}
@@ -80,7 +84,7 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            {isHomePage ? (
+            {(isHomePage || isLoginHomePage) ? (
               <ScrollLink
                 to="gallery"
                 smooth={true}
@@ -97,7 +101,7 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            {isHomePage ? (
+            {(isHomePage || isLoginHomePage) ? (
               <ScrollLink
                 to="contacts"
                 smooth={true}
