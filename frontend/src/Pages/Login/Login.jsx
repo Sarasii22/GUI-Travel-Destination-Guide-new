@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import Footer from "../../Components/Footer/Footer";
-import NavBar from "../../Components/Navbar/Navbar";
+
 import { Form, FormGroup } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -39,7 +38,7 @@ const Login = () => {
   return (
     <div>
       <div className="login">
-        <NavBar />
+        <Link to="/" className="Homebtn">Home </Link>
         <div className="login-container">
           <h1>Login</h1>
           <Form onSubmit={handleLoginClick}>
@@ -74,7 +73,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </div>
   );
 };
