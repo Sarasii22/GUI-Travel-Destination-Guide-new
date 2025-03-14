@@ -100,6 +100,20 @@
   align-items: center;
 }
 
+.Homebtn{
+  
+  left: 70px;
+  top: 50px;
+  position: absolute;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.Homebtn:hover{
+  color: #fff;
+  text-decoration: underline;
+}
+
 /* Login container styling */
 .login-container {
   max-width: 400px;
@@ -128,7 +142,7 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: var(--text-color1);
+  color: rgb(3, 3, 3);
   margin-top: 15px;
   text-align: left;
 }

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./Register.css";
 import { Form, FormGroup } from "reactstrap";
-import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -55,7 +53,7 @@ const Register = () => {
   return (
     <div>
       <div className="register">
-        <Navbar />
+        
         <div className="register-container">
           <h1>Sign Up</h1>
           <Form className="register-form" onSubmit={handleLoginClick}>
@@ -136,7 +134,7 @@ const Register = () => {
           </Form>
         </div>
       </div>
-      <Footer />
+      
     </div>
   );
 };
