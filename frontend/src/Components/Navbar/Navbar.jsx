@@ -6,8 +6,8 @@ import icon from "../../assets/icons/menu-icon.png";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = React.useState(false);
-  const location = useLocation(); // Get current route
-  const isLoggedIn = !!localStorage.getItem("token"); // Check if token exists
+  const location = useLocation(); 
+  const isLoggedIn = !!localStorage.getItem("token"); 
 
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);
@@ -17,10 +17,9 @@ const Navbar = () => {
     setMobileMenu(false);
   };
 
-  const isHomePage = location.pathname === "/"; // Check if on public Home page
-  const isLoginPage = location.pathname === "/login"; // Check if on Login page
-  const isRegisterPage = location.pathname === "/register"; // Check if on Register page
-  const isLoginHomePage = location.pathname === "/loginhome"; // Check if on private Home page
+  const isHomePage = location.pathname === "/"; 
+  
+  const isLoginHomePage = location.pathname === "/loginhome"; 
 
   return (
     <nav className="nav">
@@ -28,7 +27,7 @@ const Navbar = () => {
       <div className="navigation">
         <ul className={mobileMenu ? "nav-links-mobile" : "nav-links"}>
           <li>
-            {/* Home link: If logged in, go to /loginhome; otherwise, go to / */}
+           
             {isHomePage && !isLoggedIn ? (
               <ScrollLink
                 to="hero"
