@@ -77,7 +77,7 @@ const createTables = () => {
 };
 
 // Tours Functions
-const deleteTour = (id, callback) => {
+/*const deleteTour = (id, callback) => {
   const sql = `DELETE FROM tours WHERE id = ?`;
   db.run(sql, [id], function (err) {
     if (err) {
@@ -87,6 +87,33 @@ const deleteTour = (id, callback) => {
       console.log(`Tour with id ${id} deleted. Rows affected: ${this.changes}`);
       callback(null, this.changes);
     }
+  });
+};
+*/
+
+const deleteTour = (id, callback) => {
+  db.serialize(() => {
+    // First, delete related bookings
+    db.run(`DELETE FROM bookings WHERE tour_id = ?`, [id], function (err) {
+      if (err) {
+        console.error("Error deleting related bookings:", err.message);
+        callback(err);
+        return;
+      }
+      console.log(`Deleted ${this.changes} bookings for tour_id ${id}`);
+
+      // Then, delete the tour
+      const sql = `DELETE FROM tours WHERE id = ?`;
+      db.run(sql, [id], function (err) {
+        if (err) {
+          console.error("Error deleting tour:", err.message);
+          callback(err);
+        } else {
+          console.log(`Tour with id ${id} deleted. Rows affected: ${this.changes}`);
+          callback(null, this.changes);
+        }
+      });
+    });
   });
 };
 
